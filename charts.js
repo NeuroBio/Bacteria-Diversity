@@ -62,7 +62,8 @@ function buildCharts(sample) {
 
     // 4. Create a variable that filters the samples for the object with the desired sample number.
     // 5. Create a variable that holds the first sample in the array.
-    const firstSample = samples.filter(s => s.id = sample)[0];
+    const firstSample = samples.filter(s => s.id === sample)[0];
+    console.log(samples)
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     const ids = firstSample.otu_ids;
@@ -89,6 +90,7 @@ function buildCharts(sample) {
       .reverse();
 
     var yticks = topIds;
+
 
     // 8. Create the trace for the bar chart. 
     var barData = [{
