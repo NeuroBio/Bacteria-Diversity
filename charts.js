@@ -67,7 +67,9 @@ function buildCharts(sample) {
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     const ids = firstSample.otu_ids;
-    const labels = firstSample.otu_labels;
+    const labels = firstSample.otu_labels
+      // extra code to make the hover text multiline and thus more manageable
+      .map(lab => lab.split(';').join('<br>'));
     const values = firstSample.sample_values;
 
     // 7. Create the yticks for the bar chart.
@@ -101,7 +103,7 @@ function buildCharts(sample) {
     var barLayout = {
      title: '<b>Top 10 Bacteria Cultures Found</b>',
      yaxis: { tickvals: yticks },
-     margin: { l:70, r: 25, t: 25, b: 25}
+     margin: { l:70, r: 25, t: 50, b: 25}
     };
 
     // 10. Use Plotly to plot the data with the layout. 
@@ -126,7 +128,7 @@ function buildCharts(sample) {
       title: '<b>Bacteria Cultures per Sample</b>',
       xaxis: { title: 'OTU ID' },
       hovermode:'closest',
-      margin: { l:25, r: 25, t: 25, b: 50}
+      margin: { l:25, r: 25, t: 50, b: 50}
     };
 
     // 3. Use Plotly to plot the data with the layout.
@@ -162,7 +164,7 @@ function buildCharts(sample) {
     var gaugeLayout = { 
       title: '<b>Belly Button Washing Frequency</b>',
       xaxis: { autotick: false, tickmode: 'linear', tick0: 0, dtick: 2 },
-      margin: { l:25, r:25, t: 25, b: 150}
+      margin: { l:25, r:25, t: 50, b: 10}
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
