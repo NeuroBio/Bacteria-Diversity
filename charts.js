@@ -105,7 +105,7 @@ function buildCharts(sample) {
     var barLayout = {
       title: '<b>Top 10 Bacteria Cultures Found</b>',
       yaxis: { tickvals: yticks },
-      margin: { l:70, r: 25, t: 50, b: 25},
+      margin: { l:80, r: 25, t: 50, b: 25},
       plot_bgcolor: '#403c36',
       paper_bgcolor: '#403c36',
       gridcolor: '#f7f2eb',
@@ -144,7 +144,6 @@ function buildCharts(sample) {
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
       title: '<b>Bacteria Cultures per Sample</b>',
-      xaxis: { title: 'OTU ID' },
       hovermode:'closest',
       margin: { l:50, r: 25, t: 50, b: 50},
       plot_bgcolor: '#403c36',
@@ -159,6 +158,7 @@ function buildCharts(sample) {
         zerolinecolor: '#c7b5a3'
       },
       xaxis: {
+        title: 'OTU ID',
         tickcolor: '#c7b5a3',
         gridcolor: '#c7b5a3',
         zerolinecolor: '#c7b5a3'

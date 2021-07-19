@@ -37,3 +37,16 @@ h1 {
     overflow: hidden;
     border: 1px solid #f7f2eb;
 }
+
+select {
+    color: #403c36;
+}
+
+.descriptor {
+    border-radius: 2em !important;
+    border: 1px solid #f7f2eb;
+    padding: .5em 1em;
+    margin: .5em;
+    background-color: #77e6cc;
+    color: #403c36;
+}
