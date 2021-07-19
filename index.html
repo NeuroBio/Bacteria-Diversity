@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<!-- Bacteria header image from: https://all-free-download.com/free-photos/download/koli_bacteria_escherichia_coli_bacteria_239095_download.html -->
 <html lang="en">
 
 <head>
@@ -7,27 +9,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bellybutton Biodiversity</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="assets/css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
 
   <div class="container">
     <div class="row">
-      <div class="col-md-12 jumbotron text-center">
+      <div class="col-md-12 jumbotron text-center smooth-corners">
         <h1>Belly Button Biodiversity Dashboard</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
+        <p id="subtitle">Use the interactive charts below to explore the dataset</p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-2">
 
-        <div class="well">
+        <div class="well dark-theme smooth-corners">
           <h5>Test Subject ID No.:</h5>
           <!-- <select id="selDataset"></select> -->
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
 
-        <div class="panel panel-primary">
+        <div id="demography-holder" class="panel panel-primary dark-theme smooth-corners">
           <div class="panel-heading">
             <h3 class="panel-title">Demographic Info</h3>
           </div>
@@ -35,18 +38,21 @@
         </div>
       </div>
       
-      <div class="col-md-5">
-        <div id="bar"></div>
-      </div>
 
-      <div class="col-md-5">
-        <div id="gauge"></div>
+      <div class="smooth-corners dark-theme">
+        <div class="col-md-5">
+          <div id="bar"></div>
+        </div>
+  
+        <div class="col-md-5">
+          <div id="gauge"></div>
+        </div>
       </div>
     </div>
     <br>
     
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 dark-theme smooth-corners">
         <div id="bubble"></div>
       </div>
     </div>

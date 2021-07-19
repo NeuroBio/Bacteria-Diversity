@@ -1,0 +1,39 @@
+/* Added Image */
+.jumbotron {
+    background-image: url('../images/bacteria.jpg');
+}
+
+/* add a background color */
+body {
+    background-color: #c7b5a3;
+}
+
+/* c */
+h1 {
+    background-color: rgba(0,0,0,.5);
+    color: #f7f2eb !important;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#subtitle {
+    background-color: rgba(0,0,0,.5);
+    color: #f7f2eb !important;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.dark-theme {
+    background-color: #403c36;
+    color: #f7f2eb !important;
+}
+
+.panel-heading {
+    background-color: yellowgreen !important;
+    border-bottom: 1px solid #f7f2eb !important;
+    color: #403c36 !important;
+}
+
+.smooth-corners {
+    border-radius: 2em !important;
+    overflow: hidden;
+    border: 1px solid #f7f2eb;
+}

@@ -1,16 +1,16 @@
 function init() {
   // Grab a reference to the dropdown select element
-  var selector = d3.select("#selDataset");
+  var selector = d3.select('#selDataset');
 
   // Use the list of sample names to populate the select options
-  d3.json("samples.json").then((data) => {
+  d3.json('samples.json').then((data) => {
     var sampleNames = data.names;
 
     sampleNames.forEach((sample) => {
       selector
-        .append("option")
+        .append('option')
         .text(sample)
-        .property("value", sample);
+        .property('value', sample);
     });
 
     // Use the first sample from the list to build the initial plots
@@ -27,27 +27,26 @@ function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
   buildMetadata(newSample);
   buildCharts(newSample);
-  
 }
 
 // Demographics Panel 
 function buildMetadata(sample) {
-  d3.json("samples.json").then((data) => {
+  d3.json('samples.json').then((data) => {
     var metadata = data.metadata;
     // Filter the data for the object with the desired sample number
     var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
     var result = resultArray[0];
     // Use d3 to select the panel with id of `#sample-metadata`
-    var PANEL = d3.select("#sample-metadata");
+    var PANEL = d3.select('#sample-metadata');
 
-    // Use `.html("") to clear any existing metadata
-    PANEL.html("");
+    // Use `.html('') to clear any existing metadata
+    PANEL.html('');
 
     // Use `Object.entries` to add each key and value pair to the panel
     // Hint: Inside the loop, you will need to use d3 to append new
     // tags for each key-value in the metadata.
     Object.entries(result).forEach(([key, value]) => {
-      PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
+      PANEL.append('h6').text(`${key.toUpperCase()}: ${value}`);
     });
 
   });
@@ -56,7 +55,7 @@ function buildMetadata(sample) {
 // 1. Create the buildCharts function.
 function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
-  d3.json("samples.json").then((data) => {
+  d3.json('samples.json').then((data) => {
     // 3. Create a variable that holds the samples array. 
     const samples = data.samples;
 
@@ -96,14 +95,33 @@ function buildCharts(sample) {
       y: yticks,
       type: 'bar',
       orientation: 'h',
-      text: topLabels
+      text: topLabels,
+      marker: {
+        color: 'yellowgreen'
+      }
     }];
 
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-     title: '<b>Top 10 Bacteria Cultures Found</b>',
-     yaxis: { tickvals: yticks },
-     margin: { l:70, r: 25, t: 50, b: 25}
+      title: '<b>Top 10 Bacteria Cultures Found</b>',
+      yaxis: { tickvals: yticks },
+      margin: { l:70, r: 25, t: 50, b: 25},
+      plot_bgcolor: '#403c36',
+      paper_bgcolor: '#403c36',
+      gridcolor: '#f7f2eb',
+      font: {
+        color: '#f7f2eb'
+      },
+      yaxis: {
+        tickcolor: '#c7b5a3',
+        gridcolor: '#c7b5a3',
+        zerolinecolor: '#c7b5a3'
+      },
+      xaxis: {
+        tickcolor: '#c7b5a3',
+        gridcolor: '#c7b5a3',
+        zerolinecolor: '#c7b5a3'
+      }
     };
 
     // 10. Use Plotly to plot the data with the layout. 
@@ -128,7 +146,23 @@ function buildCharts(sample) {
       title: '<b>Bacteria Cultures per Sample</b>',
       xaxis: { title: 'OTU ID' },
       hovermode:'closest',
-      margin: { l:25, r: 25, t: 50, b: 50}
+      margin: { l:50, r: 25, t: 50, b: 50},
+      plot_bgcolor: '#403c36',
+      paper_bgcolor: '#403c36',
+      gridcolor: '#f7f2eb',
+      font: {
+        color: '#f7f2eb'
+      },
+      yaxis: {
+        tickcolor: '#c7b5a3',
+        gridcolor: '#c7b5a3',
+        zerolinecolor: '#c7b5a3'
+      },
+      xaxis: {
+        tickcolor: '#c7b5a3',
+        gridcolor: '#c7b5a3',
+        zerolinecolor: '#c7b5a3'
+      }
     };
 
     // 3. Use Plotly to plot the data with the layout.
@@ -139,7 +173,7 @@ function buildCharts(sample) {
     const firstMeta = data.metadata.filter(m => m.id === parseInt(sample))[0];  
 
     // 3. Create a variable that holds the washing frequency.
-    const wash = firstMeta.wfreq
+    const wash = firstMeta.wfreq;
     
     // 4. Create the trace for the gauge chart.
     var gaugeData = [{
@@ -164,11 +198,22 @@ function buildCharts(sample) {
     var gaugeLayout = { 
       title: '<b>Belly Button Washing Frequency</b>',
       xaxis: { autotick: false, tickmode: 'linear', tick0: 0, dtick: 2 },
-      margin: { l:25, r:25, t: 50, b: 10}
+      margin: { l:25, r:25, t: 50, b: 10 },
+      plot_bgcolor: '#403c36',
+      paper_bgcolor: '#403c36',
+      font: {
+        color: '#f7f2eb'
+      }
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
     Plotly.newPlot('gauge', gaugeData, gaugeLayout);
   });
 
+}
+
+window.onresize = function() {
+  let sample = d3.select('#selDataset').property('value');
+  buildMetadata(sample);
+  buildCharts(sample);
 }
