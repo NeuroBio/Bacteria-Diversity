@@ -5,3 +5,6 @@ The dataset displayed here characterizes the bacterial species that colonize dif
 
 ## Website Link
 https://neurobio.github.io/Bacteria-Diversity/
+
+## Image Sources
+Bacteria header image from: https://all-free-download.com/free-photos/download/koli_bacteria_escherichia_coli_bacteria_239095_download.html
