@@ -92,7 +92,7 @@ function buildCharts(sample) {
     // 8. Create the trace for the bar chart. 
     var barData = [{
       x: topValues,
-      y: yticks,
+      y: topIds,
       type: 'bar',
       orientation: 'h',
       text: topLabels,
@@ -169,20 +169,20 @@ function buildCharts(sample) {
     Plotly.newPlot('bubble', bubbleData, bubbleLayout);
 
     // 1. Create a variable that filters the metadata array for the object with the desired sample number.
-    // Create a variable that holds the first sample in the array.
+    // 2. Create a variable that holds the first sample in the array.
     const firstMeta = data.metadata.filter(m => m.id === parseInt(sample))[0];  
 
     // 3. Create a variable that holds the washing frequency.
-    const wash = firstMeta.wfreq;
+    const wash = parseFloat(firstMeta.wfreq);
     
     // 4. Create the trace for the gauge chart.
     var gaugeData = [{
       value: wash,
       type:'indicator',
       mode: 'gauge+number',
-      title: 'Scrubs per Week',
+      title: '<b>Bellybutton Washing Frequency</b><br>Scrubs per Week',
       gauge: {
-        axis: { range: [0, 10] },
+        axis: { range: [0, 10], tickcolor: '#f7f2eb', tickwidth: 2 },
         steps: [
           { range: [0, 2], color: 'steelblue' },
           { range: [2, 4], color: 'turquoise' },
@@ -196,9 +196,7 @@ function buildCharts(sample) {
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
-      title: '<b>Bellybutton Washing Frequency</b>',
-      xaxis: { autotick: false, tickmode: 'linear', tick0: 0, dtick: 2 },
-      margin: { l:25, r:25, t: 50, b: 10 },
+      margin: { l: 25, r: 25, t: 50, b: 10 },
       plot_bgcolor: '#403c36',
       paper_bgcolor: '#403c36',
       font: {
