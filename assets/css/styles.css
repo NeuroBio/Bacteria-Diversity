@@ -63,3 +63,11 @@ select {
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+#bar {
+    max-width: calc(95vw);
+}
+
+#gauge {
+    max-width: calc(95vw);
+}
