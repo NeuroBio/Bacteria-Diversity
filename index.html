@@ -21,8 +21,26 @@
         <p id="subtitle">Use the interactive charts below to explore the dataset</p>
       </div>
     </div>
+
+    <div class="row smooth-corners dark-theme" id="introduction">
+        <p class="col-md-12">
+          The dataset displayed here shows the bacterial species that colonize
+          different individual’s belly buttons.  Microbiology biological
+          researcher Roza hypothesizes there is a species of bacteria in the
+          bellybutton which produces compounds that will produce the perfect
+          flavor for imitation beef.  If a species that performs this task is
+          discovered, this dashboard will allow participants in the study to
+          look up their participant ID to discover what species colonize their
+          belly buttons and whether their microflora could be sold to produce
+          imitation beef.
+        </p>
+    </div>
+
+    <br>
+
+
     <div class="row">
-      <div class="col-md-2">
+      <div id="partcipant-info" class="col-md-2">
 
         <div class="well dark-theme smooth-corners">
           <h5>Test Subject ID No.:</h5>
@@ -39,7 +57,7 @@
       </div>
       
 
-      <div class="smooth-corners dark-theme">
+      <div id="bar-bubble" class="smooth-corners dark-theme">
         <div class="col-md-5">
           <div id="bar"></div>
           <p class="descriptor">
@@ -48,6 +66,7 @@
             displayed for a specific bar on hover.
           </p>
         </div>
+
   
         <div class="col-md-5">
           <div id="gauge"></div>
@@ -58,6 +77,7 @@
         </div>
       </div>
     </div>
+
     <br>
     
     <div class="row">

@@ -1,14 +1,11 @@
-/* Added Image */
 .jumbotron {
     background-image: url('../images/bacteria.jpg');
 }
 
-/* add a background color */
 body {
     background-color: #c7b5a3;
 }
 
-/* c */
 h1 {
     background-color: rgba(0,0,0,.5);
     color: #f7f2eb !important;
@@ -49,4 +46,20 @@ select {
     margin: .5em;
     background-color: #77e6cc;
     color: #403c36;
+}
+
+#introduction {
+    padding: .5em 1em !important;
+}
+
+#partcipant-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#bar-bubble {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
