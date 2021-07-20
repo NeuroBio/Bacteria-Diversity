@@ -196,7 +196,7 @@ function buildCharts(sample) {
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
-      title: '<b>Belly Button Washing Frequency</b>',
+      title: '<b>Bellybutton Washing Frequency</b>',
       xaxis: { autotick: false, tickmode: 'linear', tick0: 0, dtick: 2 },
       margin: { l:25, r:25, t: 50, b: 10 },
       plot_bgcolor: '#403c36',
