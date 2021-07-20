@@ -4,12 +4,18 @@
 
 body {
     background-color: #c7b5a3;
+    font-size: 13pt;
+    line-height: 1.65;
 }
 
 h1 {
     background-color: rgba(0,0,0,.5);
     color: #f7f2eb !important;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h2 {
+    font-size: 13pt;
 }
 
 #subtitle {
@@ -37,6 +43,7 @@ h1 {
 
 select {
     color: #403c36;
+    background-color: yellowgreen !important;
 }
 
 .descriptor {
