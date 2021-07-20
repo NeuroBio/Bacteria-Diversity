@@ -18,6 +18,10 @@ h2 {
     font-size: 13pt;
 }
 
+h3 {
+    font-size: 11pt;
+}
+
 #subtitle {
     background-color: rgba(0,0,0,.5);
     color: #f7f2eb !important;
